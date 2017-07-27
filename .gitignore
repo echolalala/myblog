@@ -1,0 +1,15 @@
+
+Blog.Core/bin/*
+Blog.Core/obj/*
+
+Blog.Data/bin/*
+Blog.Data/obj/*
+
+Blog.Core/bin/*
+Blog.Core/obj/*
+
+Blog.Service/bin/*
+Blog.Service/obj/*
+
+Blog.Web/bin/*
+Blog.Web/obj/*

@@ -1,0 +1,41 @@
+﻿@model Blog.Core.Blogs.Comment
+<h4 class="m-t-lg m-b">------------留下你的买路钱--------------</h4>
+
+
+@using (Html.BeginForm("SaveComment", "Blog",new { @id= "commentForm" }))
+{
+    <div class="form-group pull-in clearfix">
+        <div class="col-sm-6">
+
+            <input name="BlogId" value="@ViewBag.BlogId" type="hidden" />
+            <label for="nickname">Name</label>
+
+            @Html.DropDownList("IdentityId", ViewData["droplist"] as List<SelectListItem>, new { @class = "form-control", @required = "" })
+            @*<input type="text" class="form-control" placeholder="Name" name="nickname">*@
+
+            @*@Html.TextBoxFor(x => x.Identity.IdentityName, new { @class = "form-control", @placeholder = "你的昵称" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="CommentText">Comment</label>
+        @Html.TextAreaFor(x => x.CommentText, new { @class = "form-control", @rows = "5", @placeholder = "买（评）路（论）钱", @required =""})
+    </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">来一发</button>
+        </div>
+}
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script>
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("提交事件!");
+            }
+        });
+        $().ready(function () {
+            $("#commentForm").validate({
+                debug: true
+            });
+        });
+</script>
+

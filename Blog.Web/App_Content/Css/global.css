@@ -1,0 +1,31 @@
+﻿html, body {
+    height: 100%;
+}
+
+::selection {
+    background: #A8CD25;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    font-size: 22px;
+    color: black;
+}
+
+
+.secondary {
+    background-color: #323232;
+    height: 18%;
+}
+
+span {
+    font-family: 'Microsoft YaHei';
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+}

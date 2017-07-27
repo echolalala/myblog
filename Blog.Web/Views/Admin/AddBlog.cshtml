@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+@model Blog.Core.Blogs.BlogPost
+
+<section id="content">
+    <section class="vbox">
+        <section class="scrollable padder">
+            <div class="m-b-md">
+                <h3 class="m-b-none">Elements</h3>
+            </div>
+            <section class="panel panel-default">
+                <header class="panel-heading font-bold">
+                    Form elements
+                </header>
+                <div class="panel-body">
+                    <!--表单区域-->
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-10">
+                                @Html.HiddenFor(x => x.Id)
+                                @Html.TextBoxFor(x => x.Tittle, new { @class = "form-control rounded" })
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">分类</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group m-r">
+                                    <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                        <span id="Category" class="dropdown-label">--全部分类--</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-select">
+                                        <li class="active"><input type="radio" name="d-s-r" checked=""><a href="#">--全部分类--</a></li>
+                                        <li><input type="radio" name="d-s-r"><a href="#">IOS</a></li>
+                                        <li><input type="radio" name="d-s-r"><a href="#">安卓</a></li>
+                                        <li><input type="radio" name="d-s-r"><a href="#">MVC</a></li>
+                                    </ul>
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">关键词</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(x => x.KeyWord, new { @class = "slider slider-horizontal form-control" })
+                                @*<input id="keyword" class="slider slider-horizontal form-control" type="text" value="" data-slider-min="5" data-slider-max="20" data-slider-step="1" data-slider-value="10" data-slider-orientation="horizontal">*@
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">正文</label>
+                            <div class="col-sm-10">
+                                <script id="container" name="CommentText" type="text/plain">
+                                    @Html.Raw((Model == null ? "" : Model.CommentRichText))
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-default">Cancel</button>
+                                <button class="btn btn-primary" onclick="saveBlog();">Save changes</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+</section>
+<script src="~/App_Content/ueditor/ueditor.config.js"></script>
+<script src="~/App_Content/ueditor/ueditor.all.js"></script>
+
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+
+    function saveBlog() {
+        var Id = $("#Id").val();
+        var tittle = $("#Tittle").val();
+        //var Category = $("#Category").val();
+        var Category = "1";
+        var CommentText = UE.getEditor('container').getContentTxt();
+        var CommentRichText = UE.getEditor('container').getContent()
+        var KeyWord = $("#KeyWord").val();
+        $.ajax({
+            type: 'POST',
+            url: "/Admin/Save",
+            data: { "Id": Id, "tittle": tittle, "CommentText": CommentText, "CommentRichText": CommentRichText, "KeyWord": KeyWord, "Category": Category },
+            dataType: "text",
+            success: function (data) {
+                alert(data);
+            }
+        });
+    }
+</script>
+

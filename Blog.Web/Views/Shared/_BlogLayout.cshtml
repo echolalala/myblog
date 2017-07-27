@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <meta charset="utf-8" />
+    <title>NotBin</title>
+    <script async src="http://c.cnzz.com/core.php"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/App_Content/Img/code_green_circular.ico")" media="screen" />
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="~/App_Content/Css/js/jPlayer/jplayer.flat.css" type="text/css" />
+    <link href="~/App_Content/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/App_Content/Css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="~/App_Content/Css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/App_Content/Css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="~/App_Content/Css/font.css" type="text/css" />
+    <link rel="stylesheet" href="~/App_Content/Css/app.css" type="text/css" />
+    <link href="~/App_Content/nprogress/nprogress.css" rel="stylesheet" />
+    <script src="~/App_Content/nprogress/nprogress.js"></script>
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5shiv.js"></script>
+      <script src="js/ie/respond.min.js"></script>
+      <script src="js/ie/excanvas.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .detail-ads3, .detail-ads, [class^="in-ads-"], .wide-bg-dark > .wide-main > .page-in-main:first-child > .page-banner, .wide-main > .page-in-main:first-child + .in-media-side {
+            display: none !important;
+            display: none;
+        }
+    </style>
+    <script>
+        NProgress.start();
+        NProgress.inc();
+    </script>
+</head>
+<body class="">
+    <section class="vbox">
+        <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+            <div class="navbar-header aside bg-info dk">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                    <i class="glyphicon glyphicon-sound-stereo"></i>
+                </a>
+                <a href="/blog" class="navbar-brand text-lt">
+                    <i class="glyphicon glyphicon-edit"></i>
+                    <span class="hidden-nav-xs m-l-sm">BinNot</span>
+                </a>
+                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+                    <i class="icon-settings"></i>
+                </a>
+            </div>      <ul class="nav navbar-nav hidden-xs">
+                <li>
+                    <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
+                        <i class="glyphicon glyphicon-sound-stereo"></i>
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="glyphicon glyphicon-tasks"></i></button>
+                        </span>
+                        <input type="text" class="form-control input-sm no-border rounded" placeholder="找点什么吧...">
+                    </div>
+                </div>
+            </form>
+            <div class="navbar-right ">
+                <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+                    <li class="hidden-xs">
+                        <section class="dropdown-menu aside-xl animated fadeInUp">
+                            <section class="panel bg-white">
+                                <div class="panel-heading b-light bg-light">
+                                    <strong>You have <span class="count">2</span> notifications</strong>
+                                </div>
+                                <div class="list-group list-group-alt">
+                                    <a href="#" class="media list-group-item">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="images/a0.png" alt="..." class="img-circle">
+                                        </span>
+                                        <span class="media-body block m-b-none">
+                                            Use awesome animate.css<br>
+                                            <small class="text-muted">10 minutes ago</small>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="media list-group-item">
+                                        <span class="media-body block m-b-none">
+                                            1.0 initial released<br>
+                                            <small class="text-muted">1 hour ago</small>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-footer text-sm">
+                                    <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                                    <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                                </div>
+                            </section>
+                        </section>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+                            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                                <img src="~/App_Content/Img/touxiang.png" alt="..." />
+                            </span>
+                            Builer:张传斌 <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight">
+                            <li>
+                                <span class="arrow top"></span>
+                                <a href="#">联系我</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    了解更多
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!--左侧连接-->
+                @Html.Partial("_Right")
+                <!-- /内容页 -->
+                @RenderBody()
+            </section>
+        </section>
+    </section>
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/jquery-2.1.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+    <!-- App -->
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/app.js"></script>
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/jquery.slimscroll.min.js"></script>
+
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/app.plugin.js"></script>
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/jquery.jplayer.min.js"></script>
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/jplayer.playlist.min.js"></script>
+    <script src="~/App_Content/bootstrap-3.3.5-dist/js/demo.js"></script>
+</body>
+</html>
+<script>
+    $(window).load(function () {
+        NProgress.done();
+    })
+
+</script>

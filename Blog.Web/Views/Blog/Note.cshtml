@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+@model Blog.Web.Models.BlogModel
+<section id="content">
+    <section class="vbox">
+        <section class="scrollable wrapper-lg">
+            <div class="row">
+                <div class="col-sm-9">
+                    <!-- 博客内容 -->
+                    <div class="blog-post">
+                        <div class="post-item">
+                            <div class="caption wrapper-lg">
+                                <h2 class="post-title">@Model.Tittle</h2>
+                                <i class="glyphicon glyphicon-time"></i> @Model.CreatedTime
+                                <i class="glyphicon glyphicon-user"></i> by @Model.Author
+                                <div style="padding-top:5px;">
+                                    <span class="label label-default">Default</span>
+                                    <span class="label label-primary">Primary</span>
+                                    <span class="label label-success">Success</span>
+                                    <span class="label label-info">Info</span>
+                                    <span class="label label-warning">Warning</span>
+                                    <span class="label label-danger">Danger</span>
+                                </div>
+                                <div class="post-sum">
+                                    <br />
+                                    <p>
+                                        @Html.Raw(Model.CommentRichText)
+                                    </p>
+                                </div>
+                                <div class="line line-lg"></div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- 评论区 -->
+                    <h4 class="m-t-lg m-b">评论 x @Model.CommentList.Count </h4>
+                    <section class="comment-list block">
+                        @for (int i = 0; i < Model.CommentList.Count;i++ )
+                        {
+                            if (Model.CommentList[i].ReplyId == null)
+                            {
+
+                                <article id="comment-id-1" class="comment-item">
+                                    <a class="pull-left thumb-sm" href="javascript:void(0)">
+                                        <img src="~/App_Content/Img/@Model.CommentList[i].Identity.ImgPath" />
+                                    </a>
+                                    <section class="comment-body m-b">
+                                        <header>
+                                            <a href="javascript:void(0)"><strong>@Model.CommentList[i].Identity.IdentityName   (来自：@Model.CommentList[i].IpDr)</strong></a>
+                                            <label class="label bg-info m-l-xs">@(i+1) 楼</label>
+                                            <span class="text-muted text-xs block m-t-xs">
+                                                @Model.CommentList[i].CreatTime
+                                                <a href="javascript:">回复</a>
+                                            </span>
+                                        </header>
+                                        <div class="m-t-sm">@Model.CommentList[i].CommentText</div>
+                                    </section>
+                                </article>
+                            }
+                            foreach (var item2 in Model.CommentList)
+                            {
+                                if (item2.ReplyId == Model.CommentList[i].Id)
+                                {
+                                    <article id="comment-id-2" class="comment-item comment-reply">
+                                        <a class="pull-left thumb-sm">
+                                            <img src="images/a1.png" class="img-circle">
+                                        </a>
+                                        <section class="comment-body m-b">
+                                            <header>
+                                                <a href="#"><strong>@item2.Identity.IdentityName</strong></a>
+                                                <label class="label bg-dark m-l-xs">回复</label>
+                                                <span class="text-muted text-xs block m-t-xs">
+                                                    @item2.CreatTime
+                                                </span>
+                                            </header>
+                                            <div class="m-t-sm">@item2.CommentText</div>
+                                        </section>
+                                    </article>
+                                }
+
+                            }
+                        }
+                        
+                    </section>
+                    <!-- 回复区 -->
+                    @Html.Action("Comment", new { @BlogId=Model.Id})
+                </div>
+
+                <!-- 右侧分类 -->
+                @Html.Action("Category")
+
+            </div>
+        </section>
+    </section>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+</section>
