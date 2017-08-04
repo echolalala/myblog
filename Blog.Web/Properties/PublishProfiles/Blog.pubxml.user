@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Echo\Desktop\MyBlog</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\chuanbin\Desktop\Myblog</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Content/bootstrap-3.3.5-dist/css/bootstrap-theme.css">
@@ -146,6 +146,33 @@
     </File>
     <File Include="App_Content/Img/xiaowanzi.gif">
       <publishTime>10/11/2016 15:42:36</publishTime>
+    </File>
+    <File Include="App_Content/layer/layer.js">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/mobile/layer.js">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/mobile/need/layer.css">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/skin/default/icon-ext.png">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/skin/default/icon.png">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/skin/default/layer.css">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/skin/default/loading-0.gif">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/skin/default/loading-1.gif">
+      <publishTime>08/04/2017 09:53:15</publishTime>
+    </File>
+    <File Include="App_Content/layer/skin/default/loading-2.gif">
+      <publishTime>08/04/2017 09:53:15</publishTime>
     </File>
     <File Include="App_Content/load.js/css/bootstrap.min.css">
       <publishTime>10/03/2015 00:53:03</publishTime>
@@ -1006,10 +1033,10 @@
       <publishTime>06/29/2016 23:56:32</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>04/15/2017 17:17:36</publishTime>
+      <publishTime>08/04/2017 10:02:23</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>04/15/2017 17:17:35</publishTime>
+      <publishTime>08/04/2017 10:02:23</publishTime>
     </File>
     <File Include="bin/Autofac.dll">
       <publishTime>06/29/2016 00:55:25</publishTime>
@@ -1021,16 +1048,16 @@
       <publishTime>07/05/2016 23:25:12</publishTime>
     </File>
     <File Include="bin/Blog.Core.dll">
-      <publishTime>04/15/2017 17:17:27</publishTime>
+      <publishTime>08/04/2017 10:00:46</publishTime>
     </File>
     <File Include="bin/Blog.Data.dll">
-      <publishTime>04/15/2017 17:17:27</publishTime>
+      <publishTime>08/04/2017 10:00:46</publishTime>
     </File>
     <File Include="bin/Blog.Service.dll">
-      <publishTime>04/15/2017 17:17:27</publishTime>
+      <publishTime>08/04/2017 10:00:46</publishTime>
     </File>
     <File Include="bin/Blog.Web.dll">
-      <publishTime>04/15/2017 17:17:28</publishTime>
+      <publishTime>08/04/2017 10:00:47</publishTime>
     </File>
     <File Include="bin/cs/FluentValidation.resources.dll">
       <publishTime>02/26/2016 09:50:52</publishTime>
@@ -1165,7 +1192,7 @@
       <publishTime>10/14/2016 13:14:51</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>04/15/2017 17:17:33</publishTime>
+      <publishTime>08/04/2017 10:02:21</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>06/29/2016 00:38:29</publishTime>
@@ -1195,7 +1222,7 @@
       <publishTime>07/03/2016 23:38:58</publishTime>
     </File>
     <File Include="Views/Admin/Index.cshtml">
-      <publishTime>07/05/2016 23:00:01</publishTime>
+      <publishTime>08/04/2017 09:56:34</publishTime>
     </File>
     <File Include="Views/Blog/Category.cshtml">
       <publishTime>07/08/2016 11:46:08</publishTime>
@@ -1213,13 +1240,16 @@
       <publishTime>10/11/2016 17:10:09</publishTime>
     </File>
     <File Include="Views/Shared/_BlogLayout.cshtml">
-      <publishTime>10/11/2016 17:09:55</publishTime>
+      <publishTime>08/04/2017 09:56:54</publishTime>
     </File>
     <File Include="Views/Shared/_foot.cshtml">
       <publishTime>06/29/2016 01:09:08</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/11/2016 17:09:59</publishTime>
+      <publishTime>08/04/2017 09:55:28</publishTime>
+    </File>
+    <File Include="Views/Shared/_Notifications.cshtml">
+      <publishTime>08/04/2017 09:35:16</publishTime>
     </File>
     <File Include="Views/Shared/_Right.cshtml">
       <publishTime>07/07/2016 22:53:41</publishTime>
@@ -1228,7 +1258,7 @@
       <publishTime>06/29/2016 00:38:07</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/15/2017 17:17:29</publishTime>
+      <publishTime>08/04/2017 10:02:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

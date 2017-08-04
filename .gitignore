@@ -17,3 +17,6 @@ Blog.Web/obj/*
 Blog.Web/Properties/*
 
 .vs/*
+.vs/MyBlog/v14/.suo
+*.pubxml
+*.user
