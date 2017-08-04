@@ -13,3 +13,5 @@ Blog.Service/obj/*
 
 Blog.Web/bin/*
 Blog.Web/obj/*
+
+Blog.Web/Properties/*
