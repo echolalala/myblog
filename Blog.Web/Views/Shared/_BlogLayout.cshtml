@@ -132,16 +132,18 @@
     <!-- App -->
     <script src="~/App_Content/bootstrap-3.3.5-dist/js/app.js"></script>
     <script src="~/App_Content/bootstrap-3.3.5-dist/js/jquery.slimscroll.min.js"></script>
-
+    <script src="~/App_Content/layer/layer.js"></script>
     <script src="~/App_Content/bootstrap-3.3.5-dist/js/app.plugin.js"></script>
     <script src="~/App_Content/bootstrap-3.3.5-dist/js/jquery.jplayer.min.js"></script>
     <script src="~/App_Content/bootstrap-3.3.5-dist/js/jplayer.playlist.min.js"></script>
     <script src="~/App_Content/bootstrap-3.3.5-dist/js/demo.js"></script>
+    <!-- 弹出框 -->
+    @Html.Partial("_Notifications")
 </body>
 </html>
+
 <script>
     $(window).load(function () {
         NProgress.done();
-    })
 
 </script>

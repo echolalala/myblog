@@ -8,19 +8,21 @@ using System.Web.Mvc;
 
 namespace Blog.Web.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
         private readonly IBlogPostService _blogPostService;
-        public AdminController(IBlogPostService _blogPostService)
+        private readonly ICommentService _commentService;
+        public AdminController(IBlogPostService _blogPostService, ICommentService _commentService)
         {
             this._blogPostService = _blogPostService;
+            this._commentService = _commentService;
         }
         //
         // GET: /Admin/
         public ActionResult Index()
         {
             var blogList = _blogPostService.Table.ToList();
-            
+
             return View(blogList);
         }
 
@@ -78,6 +80,33 @@ namespace Blog.Web.Controllers
         public ActionResult Ceshi()
         {
             return View();
+        }
+
+
+        public ActionResult DeleteBlog(int id)
+        {
+            try
+            {
+                var blog = _blogPostService.Table.Where(x => x.Id == id).FirstOrDefault();
+                if (blog != null)
+                {
+                    var commentList = _commentService.Table.Where(x => x.BlogId == id).ToList();
+                    var res = _commentService.Delete(commentList);
+                    var res2 = _blogPostService.Delete(blog);
+                    Notification("删除成功！");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    Notification("未找到当前文章信息");
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                Notification(ex.ToString());
+                return RedirectToAction("Index");
+            }
         }
 
     }

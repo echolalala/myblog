@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Blog.Web.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : BaseController
     {
         private readonly IBlogPostService _blogPostService;
         private readonly ICommentService _commentService;
@@ -32,7 +32,7 @@ namespace Blog.Web.Controllers
             List<BlogPost> blogList = new List<BlogPost>();
             if (id == null)
 
-                blogList = _blogPostService.Table.ToList();
+                blogList = _blogPostService.Table.OrderByDescending(x=>x.CreatedTime).ToList();
             else
                 blogList = _blogPostService.Table.Where(x => x.CategoryId == id).ToList();
 

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Blog.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ICustomerService _customerService;
         private readonly IBlogPostService _blogComentService;

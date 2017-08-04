@@ -1,0 +1,23 @@
+﻿@{
+    var messages = new List<string>();
+    if (TempData["notification"] as IList<string> != null)
+    {
+        messages.AddRange(TempData["notification"] as IList<string>);
+    }
+}
+@{
+    foreach (var message in messages)
+    {
+        <script type="text/javascript">
+            layer.open({
+                title: [
+                  '提示',
+                  'background-color: #fc5a29; color:#fff;'
+                ],
+                content: '@Html.Raw(HttpUtility.JavaScriptStringEncode(message))',
+                shadeClose: false,
+                btn: '我知道了'
+            });
+        </script>
+    }
+}

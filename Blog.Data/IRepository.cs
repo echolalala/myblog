@@ -31,6 +31,14 @@ namespace Blog.Data
         int Delete(T model);
 
         /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="models"></param>
+        /// <returns></returns>
+        int Delete(List<T> models);
+
+
+        /// <summary>
         /// 分页获取数据
         /// </summary>
         /// <typeparam name="TOrderKey">排序Key</typeparam>

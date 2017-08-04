@@ -43,11 +43,23 @@ namespace Blog.Data
         {
             if (model == null)
                 throw new ArgumentNullException("model");
-
+            
             Entities.Remove(model);
             return context.SaveChanges();
         }
 
+
+        public virtual int Delete(List<T> models)
+        {
+            if (models == null)
+                throw new ArgumentNullException("model");
+
+            foreach (var item in models)
+            {
+                Entities.Remove(item);
+            }
+            return context.SaveChanges();
+        }
 
         public virtual IQueryable<T> PageList<TOrderKey>(Expression<Func<T, TOrderKey>> orderFun, int pageIndex, out int count, int pageSize = 10)
         {

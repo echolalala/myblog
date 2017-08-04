@@ -164,6 +164,15 @@
     <Content Include="App_Content\Img\superman.jpg" />
     <Content Include="App_Content\Img\touxiang.png" />
     <Content Include="App_Content\Img\xiaowanzi.gif" />
+    <Content Include="App_Content\layer\layer.js" />
+    <Content Include="App_Content\layer\mobile\layer.js" />
+    <Content Include="App_Content\layer\mobile\need\layer.css" />
+    <Content Include="App_Content\layer\skin\default\icon-ext.png" />
+    <Content Include="App_Content\layer\skin\default\icon.png" />
+    <Content Include="App_Content\layer\skin\default\layer.css" />
+    <Content Include="App_Content\layer\skin\default\loading-0.gif" />
+    <Content Include="App_Content\layer\skin\default\loading-1.gif" />
+    <Content Include="App_Content\layer\skin\default\loading-2.gif" />
     <Content Include="App_Content\load.js\css\bootstrap.min.css" />
     <Content Include="App_Content\load.js\css\default.css" />
     <Content Include="App_Content\load.js\css\demo.css" />
@@ -485,6 +494,7 @@
     <Compile Include="App_Content\ueditor\net\App_Code\UploadHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebApi\ValuesController.cs" />
@@ -512,6 +522,7 @@
     <Content Include="Views\Shared\_BlogLayout.cshtml" />
     <Content Include="Views\Blog\Comment.cshtml" />
     <Content Include="Views\Blog\Category.cshtml" />
+    <Content Include="Views\Shared\_Notifications.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -522,6 +533,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Validators\Blogs\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Core\Blog.Core.csproj">
